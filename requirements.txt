@@ -1,0 +1,7 @@
+chainlit==0.7.700
+openai==1.3.5
+cohere==4.37
+python-dotenv==1.0.0 
+tiktoken==0.5.1
+pinecone-client==2.2.4
+langchain==0.0.350
