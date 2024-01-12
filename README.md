@@ -30,8 +30,8 @@ Welcoming contributions from anyone in the community heres how to contribute:
 - [ ] Clean up code and documentation.
      - Started as hackathon project so lots of messy boiler plate code that can use refining.
 - [ ] Improve on existing system 
-     - prompt engineering, chunking strategy, automatically indexing new videos, etc.
+     - Prompt engineering, chunking strategy, automatically indexing new videos, etc.
 - [ ] Intergrate public github [repos](https://github.com/AI-Maker-Space/Awesome-AIM-Index).
      - Most videos have a corresponding github repo with the demo code. Would be awesome to have both elements incorporated combining conceptual ideas(YouTUbe) with code implementations(Github).
 - [ ] Develop front-end to move off prtototype tools like huggingface spaces + chainlit and deploy to [aimakerspace.io](https://aimakerspace.io/).
-     - more of a long shot goal and priority will be things related and taught in the courses as thats the fun stuff anyways.
+     - More of a long shot goal and priority will be things related and taught in the courses as thats the fun stuff anyways.
