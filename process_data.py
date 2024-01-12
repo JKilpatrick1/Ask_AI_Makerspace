@@ -42,24 +42,25 @@ def get_youtube_data(video_id):
     #Get meta data
     response = requests.get(f"https://noembed.com/embed?dataType=json&url={url}")
     data = json.loads(response.content)
-    title, author = data["title"], data["author_name"]
+    title = data["title"]
 
     # ' is a reserved character
     title = title.replace("'", "")
-    author = author.replace("'", "")
 
     df = pd.DataFrame(raw)
 
-    # Generate the transcript string 
+    # Generate the transcript string with timestamps
     transcript = ' '.join(f"{row['text']}<{row['start']}>" 
                           for _, row in df.iterrows())
 
-    return transcript, title, author
+    return transcript, title
 
-
+# =============================================================================
+# Index Channel
+# =============================================================================
 def create_index(video_id):
     try:
-        transcript, title, author = get_youtube_data(video_id)
+        transcript, title = get_youtube_data(video_id)
     except:
         return False
 
@@ -80,7 +81,7 @@ def create_index(video_id):
     )
 
     if index_name not in pinecone.list_indexes():
-        # we create a new index
+        # Create a new index
         pinecone.create_index(
             name=index_name,
             metric='cosine',
@@ -104,8 +105,7 @@ def create_index(video_id):
 
     metadata = {
         'source_document' : title,
-        'link' : url,
-        #'author' : author
+        'link' : url
     }
 
     record_texts = text_splitter.split_text(transcript)
@@ -115,6 +115,7 @@ def create_index(video_id):
     } for j, text in enumerate(record_texts)]
     texts.extend(record_texts)
     metadatas.extend(record_metadatas)
+    
     if len(texts) >= BATCH_LIMIT:
         ids = [str(uuid4()) for _ in range(len(texts))]
         embeds = embedder.embed_documents(texts)
@@ -127,10 +128,7 @@ def create_index(video_id):
         embeds = embedder.embed_documents(texts)
         index.upsert(vectors=zip(ids, embeds, metadatas))
         
-
     text_field = "text"
-
-    print("sent")
 
     Pinecone(
         index,
@@ -138,11 +136,6 @@ def create_index(video_id):
         text_field
     )
 
-
-
-# =============================================================================
-# 
-# =============================================================================
 def index_channel(channel_id):
 
     videos = scrapetube.get_channel(channel_id)
@@ -153,7 +146,5 @@ def index_channel(channel_id):
     for stream in live_streams:
         create_index(stream['videoId'])
 
-
 #index_channel("UCbDZFHUjTCCUKyXgcp3g50Q")  #AI MAKERSPACE
-
-create_index("yD2JaAnMMo0")
+#create_idex("") #Individual video
