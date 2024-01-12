@@ -19,6 +19,8 @@ Huggingface space found: [here](https://huggingface.co/spaces/JKilpatrick/youtub
 ## Overview
 Welcome to Ask AI Makerspace - a communtiy-driven, open-source project aimed at developing a comprehensive Retrieval-Augmented Generation (RAG) application capable of answering questions related to AI Makerspace educational videos and documents. Inteded to be a learning space to get hands-on experience with LLMs and contributing to open-source projects.
 
+Currently Works by pre-processing YouTube videos and retrieving information from the transcripts.
+(images/youtube_rag_diagram.png)
 ## How to Contribute
 Welcoming contributions from anyone in the community heres how to contribute:
 - **Submit a Pull Request:** Enhancements, bug fixes, documentation improvements.
