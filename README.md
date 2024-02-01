@@ -1,4 +1,4 @@
----
+  ---
 title: Ask AI Makerspace
 emoji: 🤖
 colorFrom: red
@@ -21,11 +21,6 @@ Welcome to Ask AI Makerspace - a communtiy-driven, open-source project aimed at 
 
 Currently Works by pre-processing YouTube videos and retrieving information from the transcripts.
 ![youtube_rag_diagram](images/youtube_rag_diagram.png)
-## How to Contribute
-Welcoming contributions from anyone in the community heres how to contribute:
-- **Submit a Pull Request:** Enhancements, bug fixes, documentation improvements.
-- **Issue Tracking:** Report bugs, propose new features.
-
 ## Roadmap
 - [ ] Clean up code and documentation.
      - Started as hackathon project so lots of messy boiler plate code that can use refining.
@@ -35,3 +30,7 @@ Welcoming contributions from anyone in the community heres how to contribute:
      - Most videos have a corresponding github repo with the demo code. Would be awesome to have both elements incorporated combining conceptual ideas(YouTube) with code implementations(Github).
 - [ ] Develop front-end to move off prtototype tools like huggingface spaces + chainlit and deploy to [aimakerspace.io](https://aimakerspace.io/).
      - More of a long shot goal and priority will be things related and taught in the courses as thats the fun stuff anyways.
+  
+---
+## Appriciate the help
+Welcoming contributions from anyone in the community [heres](CONTRIBUTING.md) how to contribute.
