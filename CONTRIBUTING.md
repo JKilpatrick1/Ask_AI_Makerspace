@@ -25,7 +25,7 @@ For contributing to Ask AI Makerspace, please follow the next steps:
    git push origin name_branch
    ```
 6. Create a pull request and describe the changes you made.
-   - **IMPORTANT**: If you want to contribute to the project, please create a pull request to develop branch, not to main branch.
+   - **IMPORTANT**: If you want to contribute to the project, please create a pull request to ***develop branch*, not to *main branch*.**
 7. Wait for the review of your pull request.
 
 ## Collaboration guidelines
